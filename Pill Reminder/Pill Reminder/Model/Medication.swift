@@ -16,11 +16,14 @@ struct Medication: Equatable, Codable {
     let schedule: MedicationSchedule
 }
 
+/// Enumeration describing the units for the medicaiton
 enum MedicationUnit: String, Codable {
     case mg = "miligrams"
     case U = "units"
 }
 
+
+/// Enumeration describing the scheduled times for the medicaiton to be taken.
 enum MedicationSchedule: Int, Codable {
     case onceADay = 1
     case twiceADay

@@ -14,10 +14,50 @@ class MedicationController {
     // MARK: - Properties
     var medications = [Medication]()
     
+    /// Computed property to return all medications that dont need refills.
+    var medicationsFilled: [Medication] {
+        return medications.filter( { $0.quantity > 0} )
+    }
+    
+    /// Computed property to return all medications needing a refill.
+    var medicationsNeedFilled: [Medication] {
+        return medications.filter( { $0.quantity == 0 } )
+    }
+    
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Initialization
     init() {
         loadFromPersistentStore()
+    }
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - CRUD methods
+    /// Function to create a new medication
+    /// - Parameters:
+    ///   - name: The name of the medication
+    ///   - dosage: The strength of the medication
+    ///   - units: The units for the medication
+    ///   - schedule: When the medication should be taken
+    func createMedication(with name: String, dosage: Int, units: MedicationUnit, schedule: MedicationSchedule) {
+        let newMedication = Medication(name: name, dosage: dosage, units: units, quantity: 30, schedule: schedule)
+        medications.append(newMedication)
+        saveToPersistentStore()
+    }
+    
+    /// Function to update the medication count
+    /// - Parameters:
+    ///   - medication: The medication which will be changed
+    ///   - count: The new count for the medication
+    func updateMedicationCount(with medication: Medication, count: Int) {
+        guard let index = medications.firstIndex(of: medication) else { return }
+        medications[index].quantity = UInt32(count)
+    }
+    
+    /// Function to delete the passed in medication from the Array
+    /// - Parameter medication: The medication to be deleted
+    func deleteMedication(_ medication: Medication) {
+        guard let index = medications.firstIndex(of: medication) else { return }
+        medications.remove(at: index)
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -28,6 +68,7 @@ class MedicationController {
         return documentsDirectory.appendingPathComponent("Medications.plist")
     }()
     
+    /// Function to save medication objects to the persistent file storage
     private func saveToPersistentStore() {
         let encoder = PropertyListEncoder()
         guard let fileURL = persistentFileURL else { return }
@@ -39,6 +80,7 @@ class MedicationController {
         }
     }
     
+    /// Function to load medication objects from persistent storage
     private func loadFromPersistentStore() {
         let decoder = PropertyListDecoder()
         let fileManager = FileManager.default
