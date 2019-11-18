@@ -41,8 +41,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5O-Ta-zdx">
-                                            <rect key="frame" x="319" y="11" width="58" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#pills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5O-Ta-zdx">
+                                            <rect key="frame" x="336.5" y="11" width="40.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2HT-Zh-vUP">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="dmZ-kh-rTD">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IYs-Ig-bWN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IYs-Ig-bWN">
                                 <rect key="frame" x="290" y="7" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="AddMedication"/>
@@ -124,6 +124,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Info " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQo-U9-FMV">
+                                <rect key="frame" x="20" y="119" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -142,6 +148,9 @@
                             <constraint firstItem="ywi-YO-8Dm" firstAttribute="trailing" secondItem="OFE-m6-7Es" secondAttribute="trailing" constant="35" id="dO9-Vf-B1A"/>
                             <constraint firstItem="CEW-cR-h3B" firstAttribute="top" secondItem="d3d-Xe-eKg" secondAttribute="bottom" constant="19" id="iQP-5J-TnU"/>
                             <constraint firstItem="U57-yq-gPl" firstAttribute="leading" secondItem="ywi-YO-8Dm" secondAttribute="leading" constant="30" id="pxY-iW-Teo"/>
+                            <constraint firstItem="wQo-U9-FMV" firstAttribute="top" secondItem="ywi-YO-8Dm" secondAttribute="top" constant="31" id="thT-S3-Eyi"/>
+                            <constraint firstItem="wQo-U9-FMV" firstAttribute="leading" secondItem="ywi-YO-8Dm" secondAttribute="leading" constant="20" id="uuL-1O-NV8"/>
+                            <constraint firstItem="ywi-YO-8Dm" firstAttribute="trailing" secondItem="wQo-U9-FMV" secondAttribute="trailing" constant="20" id="ux1-Oq-T6Y"/>
                             <constraint firstItem="d3d-Xe-eKg" firstAttribute="top" secondItem="ETk-Dr-WUD" secondAttribute="bottom" constant="17" id="vx5-vY-ITA"/>
                             <constraint firstItem="d3d-Xe-eKg" firstAttribute="trailing" secondItem="ywi-YO-8Dm" secondAttribute="trailing" id="xIj-jr-Kne"/>
                             <constraint firstItem="ETk-Dr-WUD" firstAttribute="top" secondItem="U57-yq-gPl" secondAttribute="bottom" constant="80" id="yRh-iv-fG8"/>
