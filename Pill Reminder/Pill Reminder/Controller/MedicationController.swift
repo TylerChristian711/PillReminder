@@ -38,8 +38,8 @@ class MedicationController {
     ///   - dosage: The strength of the medication
     ///   - units: The units for the medication
     ///   - schedule: When the medication should be taken
-    func createMedication(with name: String, dosage: Int, units: MedicationUnit, schedule: MedicationSchedule) {
-        let newMedication = Medication(name: name, dosage: dosage, units: units, quantity: 30, schedule: schedule)
+    func createMedication(with name: String, dosage: Int, units: MedicationUnit, time: Date) {
+        let newMedication = Medication(name: name, dosage: dosage, units: units, quantity: 30, time: time)
         medications.append(newMedication)
         saveToPersistentStore()
     }
