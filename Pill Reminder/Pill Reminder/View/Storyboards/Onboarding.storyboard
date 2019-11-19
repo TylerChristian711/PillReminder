@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="acZ-B6-OnB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding Page View Controller-->
+        <scene sceneID="o0j-SJ-qSu">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="acZ-B6-OnB" customClass="OnboardingPageViewController" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nag-GC-iBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-299"/>
+        </scene>
+        <!--Screen One-->
+        <scene sceneID="rTZ-1q-fxS">
+            <objects>
+                <viewController storyboardIdentifier="ScreenOne" id="IbG-pj-iwP" customClass="ScreenOne" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZP-9g-e3P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehg-km-30e">
+                                <rect key="frame" x="112.5" y="84" width="189.5" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-op-Oet">
+                                <rect key="frame" x="129.5" y="415.5" width="155" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVh-Jj-uBI">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="xRq-DH-NZ3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Nu-zX-DWB">
+                                        <rect key="frame" x="0.0" y="31.5" width="155" height="41"/>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="uib-ec-hwg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1Nu-zX-DWB" firstAttribute="leading" secondItem="8vX-op-Oet" secondAttribute="leading" id="7dl-Zt-vFU"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Nu-zX-DWB" secondAttribute="trailing" id="YBx-56-0Mf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8vX-op-Oet" firstAttribute="centerY" secondItem="Tct-eh-KGB" secondAttribute="centerY" id="Lg4-1y-5TZ"/>
+                            <constraint firstItem="Ehg-km-30e" firstAttribute="top" secondItem="Tct-eh-KGB" secondAttribute="top" constant="40" id="baz-rb-V0G"/>
+                            <constraint firstItem="8vX-op-Oet" firstAttribute="centerX" secondItem="Tct-eh-KGB" secondAttribute="centerX" id="ie5-Nc-7Ip"/>
+                            <constraint firstItem="Ehg-km-30e" firstAttribute="centerX" secondItem="Tct-eh-KGB" secondAttribute="centerX" id="uDI-5F-b8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tct-eh-KGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFw-2j-Ixj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="-299"/>
+        </scene>
+        <!--Screen Two-->
+        <scene sceneID="NIZ-qn-XjK">
+            <objects>
+                <viewController storyboardIdentifier="ScreenTwo" id="iLB-f7-pql" customClass="ScreenTwo" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z7d-Jq-NgE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder will show you  a list of your daily medications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtI-ua-1iP">
+                                <rect key="frame" x="86.5" y="110" width="241.5" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-mW-PIq">
+                                <rect key="frame" x="87" y="160" width="240" height="176"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-q2-sXD">
+                                <rect key="frame" x="138.5" y="549" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSo-P1-nYq">
+                                <rect key="frame" x="97.5" y="344" width="219.5" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="DRh-tc-TsE"/>
+                                </constraints>
+                                <string key="text">Giving you a quick look at all the medications you are scheduled to take and the check button allows you to record that it has been taken</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uFk-mW-PIq" firstAttribute="leading" secondItem="MBz-HP-fSv" secondAttribute="leading" constant="87" id="5V5-dI-oJv"/>
+                            <constraint firstItem="MBz-HP-fSv" firstAttribute="bottom" secondItem="ggQ-q2-sXD" secondAttribute="bottom" constant="292" id="Jtz-tT-GLj"/>
+                            <constraint firstItem="TtI-ua-1iP" firstAttribute="top" secondItem="MBz-HP-fSv" secondAttribute="top" constant="66" id="Pyc-7W-Fbw"/>
+                            <constraint firstItem="ggQ-q2-sXD" firstAttribute="centerX" secondItem="MBz-HP-fSv" secondAttribute="centerX" id="RlK-8n-btS"/>
+                            <constraint firstItem="ggQ-q2-sXD" firstAttribute="top" secondItem="QSo-P1-nYq" secondAttribute="bottom" constant="84" id="XtK-Ep-UWl"/>
+                            <constraint firstItem="QSo-P1-nYq" firstAttribute="top" secondItem="uFk-mW-PIq" secondAttribute="bottom" constant="8" id="YZM-ni-AB9"/>
+                            <constraint firstItem="TtI-ua-1iP" firstAttribute="centerX" secondItem="MBz-HP-fSv" secondAttribute="centerX" id="gWy-lm-uAv"/>
+                            <constraint firstItem="uFk-mW-PIq" firstAttribute="top" secondItem="TtI-ua-1iP" secondAttribute="bottom" constant="7.5" id="jas-2q-N4E"/>
+                            <constraint firstItem="MBz-HP-fSv" firstAttribute="trailing" secondItem="uFk-mW-PIq" secondAttribute="trailing" constant="87" id="piW-St-FJx"/>
+                            <constraint firstItem="QSo-P1-nYq" firstAttribute="centerX" secondItem="MBz-HP-fSv" secondAttribute="centerX" id="uPK-3W-JgN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MBz-HP-fSv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7a-GU-Kml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579.7101449275362" y="-299.33035714285711"/>
+        </scene>
+        <!--Screen Three-->
+        <scene sceneID="yw7-1g-lha">
+            <objects>
+                <viewController storyboardIdentifier="ScreenThree" id="d5m-KC-uHp" customClass="ScreenThree" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J8h-aU-8fi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder also gives you a  detailed view to either add" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-Wf-YvT">
+                                <rect key="frame" x="85" y="134" width="245" height="42.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42.5" id="Thu-PO-6gt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addScreen" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-V4-odb">
+                                <rect key="frame" x="85" y="196" width="245" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="YNz-KP-KC2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or edit medications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lze-q7-KqU">
+                                <rect key="frame" x="131.5" y="423" width="156.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1N2-RD-mE0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uKs-Vz-lhp">
+                                <rect key="frame" x="85" y="460" width="245" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="haE-w0-yrE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LM-TI-eQ0">
+                                <rect key="frame" x="167" y="722" width="80" height="100"/>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <segue destination="IKz-AN-F1J" kind="show" id="dg0-G6-Ca3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uKs-Vz-lhp" firstAttribute="trailing" secondItem="sVr-V4-odb" secondAttribute="trailing" id="3BT-BX-YHL"/>
+                            <constraint firstItem="3LM-TI-eQ0" firstAttribute="top" secondItem="uKs-Vz-lhp" secondAttribute="bottom" constant="51" id="4Li-Ot-CVL"/>
+                            <constraint firstItem="uKs-Vz-lhp" firstAttribute="top" secondItem="Lze-q7-KqU" secondAttribute="bottom" constant="16" id="4dl-GD-J9d"/>
+                            <constraint firstItem="Lze-q7-KqU" firstAttribute="top" secondItem="sVr-V4-odb" secondAttribute="bottom" constant="16" id="Jlz-s5-eKl"/>
+                            <constraint firstItem="uKs-Vz-lhp" firstAttribute="leading" secondItem="sVr-V4-odb" secondAttribute="leading" id="aow-Ke-8xW"/>
+                            <constraint firstItem="TO0-Wf-YvT" firstAttribute="leading" secondItem="dy2-Lg-PbR" secondAttribute="leading" constant="85" id="dI9-lt-l4z"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3LM-TI-eQ0" secondAttribute="bottom" constant="40" id="ee5-Ev-1hk"/>
+                            <constraint firstItem="sVr-V4-odb" firstAttribute="trailing" secondItem="TO0-Wf-YvT" secondAttribute="trailing" id="hkd-Q0-VNC"/>
+                            <constraint firstItem="dy2-Lg-PbR" firstAttribute="trailing" secondItem="Lze-q7-KqU" secondAttribute="trailing" constant="126" id="ibm-RU-3W8"/>
+                            <constraint firstItem="TO0-Wf-YvT" firstAttribute="top" secondItem="dy2-Lg-PbR" secondAttribute="top" constant="90" id="m5v-Lp-fPH"/>
+                            <constraint firstItem="3LM-TI-eQ0" firstAttribute="centerX" secondItem="dy2-Lg-PbR" secondAttribute="centerX" id="mqf-w4-Cgb"/>
+                            <constraint firstItem="sVr-V4-odb" firstAttribute="top" secondItem="TO0-Wf-YvT" secondAttribute="bottom" constant="19.5" id="p1G-dF-HNW"/>
+                            <constraint firstItem="Lze-q7-KqU" firstAttribute="leading" secondItem="dy2-Lg-PbR" secondAttribute="leading" constant="131.5" id="qy5-Kt-dYd"/>
+                            <constraint firstItem="sVr-V4-odb" firstAttribute="leading" secondItem="TO0-Wf-YvT" secondAttribute="leading" id="uOU-wT-JWg"/>
+                            <constraint firstItem="dy2-Lg-PbR" firstAttribute="trailing" secondItem="TO0-Wf-YvT" secondAttribute="trailing" constant="84" id="xCl-hK-K8r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dy2-Lg-PbR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7q-55-NTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285.507246376812" y="-299.33035714285711"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="VpI-qy-e3m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="IKz-AN-F1J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="spJ-9A-W0W"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcA-jk-kRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3017" y="-299"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addScreen" width="832" height="1150"/>
+        <image name="arrow.right" catalog="system" width="64" height="48"/>
+        <image name="cellScreen" width="828" height="176"/>
+        <image name="editScreen" width="828" height="1154"/>
+    </resources>
+</document>

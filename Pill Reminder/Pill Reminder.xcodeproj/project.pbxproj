@@ -11,9 +11,15 @@
 		6341B681238311DA00D97661 /* MedicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341B680238311DA00D97661 /* MedicationController.swift */; };
 		63706D00237F5521002A52B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706CFF237F5521002A52B0 /* AppDelegate.swift */; };
 		63706D02237F5521002A52B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706D01237F5521002A52B0 /* SceneDelegate.swift */; };
-		63706D07237F5521002A52B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63706D05237F5521002A52B0 /* Main.storyboard */; };
 		63706D09237F5523002A52B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63706D08237F5523002A52B0 /* Assets.xcassets */; };
 		63706D0C237F5523002A52B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63706D0A237F5523002A52B0 /* LaunchScreen.storyboard */; };
+		637BC22123845993009950FF /* MedicationCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC22023845993009950FF /* MedicationCellDelegate.swift */; };
+		637BC22323846357009950FF /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC22223846357009950FF /* OnboardingPageViewController.swift */; };
+		637BC225238463A5009950FF /* ScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC224238463A5009950FF /* ScreenOne.swift */; };
+		637BC22723846454009950FF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637BC22623846454009950FF /* Onboarding.storyboard */; };
+		637BC229238464B9009950FF /* ScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC228238464B9009950FF /* ScreenTwo.swift */; };
+		637BC22B238464D0009950FF /* ScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC22A238464D0009950FF /* ScreenThree.swift */; };
+		63BE6455238473A3007D129F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE6454238473A3007D129F /* Main.storyboard */; };
 		E3BF6207238346B700BD9798 /* PillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF6206238346B700BD9798 /* PillsTableViewController.swift */; };
 		E3BF62092383472C00BD9798 /* PillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */; };
 		E3BF620B2383475000BD9798 /* AddPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF620A2383475000BD9798 /* AddPillsViewController.swift */; };
@@ -25,10 +31,16 @@
 		63706CFC237F5521002A52B0 /* Pill Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63706CFF237F5521002A52B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63706D01237F5521002A52B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63706D06237F5521002A52B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63706D08237F5523002A52B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63706D0B237F5523002A52B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63706D0D237F5523002A52B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		637BC22023845993009950FF /* MedicationCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCellDelegate.swift; sourceTree = "<group>"; };
+		637BC22223846357009950FF /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		637BC224238463A5009950FF /* ScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOne.swift; sourceTree = "<group>"; };
+		637BC22623846454009950FF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		637BC228238464B9009950FF /* ScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTwo.swift; sourceTree = "<group>"; };
+		637BC22A238464D0009950FF /* ScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenThree.swift; sourceTree = "<group>"; };
+		63BE6454238473A3007D129F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E3BF6206238346B700BD9798 /* PillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewController.swift; sourceTree = "<group>"; };
 		E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewCell.swift; sourceTree = "<group>"; };
 		E3BF620A2383475000BD9798 /* AddPillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillsViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +71,9 @@
 		6341B67823830D0200D97661 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				63706D05237F5521002A52B0 /* Main.storyboard */,
+				63BE6454238473A3007D129F /* Main.storyboard */,
 				63706D0A237F5523002A52B0 /* LaunchScreen.storyboard */,
+				637BC22623846454009950FF /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -68,6 +81,7 @@
 		6341B67923830D1000D97661 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				637BC22C238464E0009950FF /* Onboarding */,
 				E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */,
 				E3BF6206238346B700BD9798 /* PillsTableViewController.swift */,
 				E3BF620A2383475000BD9798 /* AddPillsViewController.swift */,
@@ -114,9 +128,29 @@
 				6341B67B23830D1D00D97661 /* Model */,
 				6341B67A23830D1800D97661 /* View */,
 				6341B67923830D1000D97661 /* Controller */,
+				637BC21F23845973009950FF /* Protocols */,
 				6341B67723830CCC00D97661 /* Supporting Files */,
 			);
 			path = "Pill Reminder";
+			sourceTree = "<group>";
+		};
+		637BC21F23845973009950FF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				637BC22023845993009950FF /* MedicationCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		637BC22C238464E0009950FF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				637BC22223846357009950FF /* OnboardingPageViewController.swift */,
+				637BC224238463A5009950FF /* ScreenOne.swift */,
+				637BC228238464B9009950FF /* ScreenTwo.swift */,
+				637BC22A238464D0009950FF /* ScreenThree.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +213,8 @@
 			files = (
 				63706D0C237F5523002A52B0 /* LaunchScreen.storyboard in Resources */,
 				63706D09237F5523002A52B0 /* Assets.xcassets in Resources */,
-				63706D07237F5521002A52B0 /* Main.storyboard in Resources */,
+				637BC22723846454009950FF /* Onboarding.storyboard in Resources */,
+				63BE6455238473A3007D129F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,25 +227,22 @@
 			files = (
 				63706D00237F5521002A52B0 /* AppDelegate.swift in Sources */,
 				6341B67D2383106700D97661 /* Medication.swift in Sources */,
+				637BC225238463A5009950FF /* ScreenOne.swift in Sources */,
 				6341B681238311DA00D97661 /* MedicationController.swift in Sources */,
 				63706D02237F5521002A52B0 /* SceneDelegate.swift in Sources */,
 				E3BF62092383472C00BD9798 /* PillsTableViewCell.swift in Sources */,
 				E3BF620B2383475000BD9798 /* AddPillsViewController.swift in Sources */,
 				E3BF6207238346B700BD9798 /* PillsTableViewController.swift in Sources */,
+				637BC22B238464D0009950FF /* ScreenThree.swift in Sources */,
+				637BC229238464B9009950FF /* ScreenTwo.swift in Sources */,
+				637BC22323846357009950FF /* OnboardingPageViewController.swift in Sources */,
+				637BC22123845993009950FF /* MedicationCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63706D05237F5521002A52B0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63706D06237F5521002A52B0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63706D0A237F5523002A52B0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
