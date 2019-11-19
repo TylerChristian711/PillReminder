@@ -69,9 +69,10 @@ class AddPillsViewController: UIViewController {
         }
         
         if let medication = medication {
-            medicationController.updateMedicationCount(with: medication, count: quantity)
+            medicationController.update(medication, with: UInt32(quantity))
         } else {
             medicationController.createMedication(with: name, dosage: dosage, units: units, time: datePicker.date)
         }
+        navigationController?.popViewController(animated: true)
     }
 }

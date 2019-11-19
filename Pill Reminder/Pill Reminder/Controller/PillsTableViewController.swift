@@ -20,6 +20,10 @@ class PillsTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Table View DataSource/Delegate Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +58,9 @@ class PillsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "AddMeds":
+            guard let addMedsVC = segue.destination as? AddPillsViewController else { return }
+            addMedsVC.medicationController = medicationController
+        case "EditMeds":
             guard let addMedsVC = segue.destination as? AddPillsViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
             addMedsVC.medication = medicationController.medications[indexPath.row]
             addMedsVC.medicationController = medicationController
@@ -67,8 +74,9 @@ class PillsTableViewController: UITableViewController {
 // MARK: - MedicationCellDelegate Extension
 extension PillsTableViewController: MedicationCellDelegate {
     func didUpdateMedicationCount(for cell: PillsTableViewCell) {
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
         let medication = medicationController.medications[indexPath.row]
-        medicationController.updateMedicationCount(with: medication, count: Int(medication.quantity - 1))
+        medicationController.update(medication, with: medication.quantity - 1)
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

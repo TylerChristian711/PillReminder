@@ -48,7 +48,7 @@ class MedicationController {
     /// - Parameters:
     ///   - medication: The medication which will be changed
     ///   - count: The new count for the medication
-    func updateMedicationCount(with medication: Medication, count: Int) {
+    func update(_ medication: Medication, with count: UInt32) {
         guard let index = medications.firstIndex(of: medication) else { return }
         medications[index].quantity = UInt32(count)
     }

@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pills Table View Controller-->
         <scene sceneID="5t0-gx-Y2q">
             <objects>
-                <tableViewController id="R5i-4T-27T" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="R5i-4T-27T" customClass="PillsTableViewController" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LhC-KE-Vqo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicationInfoCell" rowHeight="86" id="6M7-sp-Ury">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicationInfoCell" rowHeight="86" id="6M7-sp-Ury" customClass="PillsTableViewCell" customModule="Pill_Reminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6M7-sp-Ury" id="i6y-dA-mVH">
@@ -71,6 +71,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="takenButtonTapped:" destination="6M7-sp-Ury" eventType="touchUpInside" id="N46-jw-I1b"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -82,6 +85,13 @@
                                         <constraint firstItem="gB3-PC-qpl" firstAttribute="top" secondItem="i6y-dA-mVH" secondAttribute="top" constant="11" id="mU3-aS-IMC"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dosageLabel" destination="k51-wY-2Nn" id="zUy-H2-Vaf"/>
+                                    <outlet property="nameLabel" destination="nI4-eO-P9q" id="pKo-hX-qtB"/>
+                                    <outlet property="quantityLabel" destination="k5O-Ta-zdx" id="SSM-I5-Tbi"/>
+                                    <outlet property="timeLabel" destination="JYw-fa-OGV" id="pwj-yD-HJX"/>
+                                    <segue destination="75v-cL-b11" kind="show" id="Jlm-4I-gmn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,14 +100,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2HT-Zh-vUP">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="dmZ-kh-rTD">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IYs-Ig-bWN">
-                                <rect key="frame" x="290" y="7" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="AddMedication"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6z-B2-Yq8">
                             <connections>
-                                <segue destination="75v-cL-b11" kind="show" identifier="AddMeds" id="uP2-pI-PBr"/>
+                                <segue destination="75v-cL-b11" kind="show" identifier="AddMeds" id="jEP-Y3-OsS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -106,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="95.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Pills View Controller-->
         <scene sceneID="r6X-1g-wSu">
             <objects>
-                <viewController id="75v-cL-b11" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="75v-cL-b11" customClass="AddPillsViewController" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rtf-Dl-Zj5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +125,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-Xe-eKg">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-Xe-eKg">
                                 <rect key="frame" x="0.0" y="379.5" width="414" height="216"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEW-cR-h3B">
@@ -129,6 +134,9 @@
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="75v-cL-b11" eventType="touchUpInside" id="Ji4-Ff-ylQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add/Edit Medication" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQo-U9-FMV">
                                 <rect key="frame" x="20" y="119" width="374" height="20.5"/>
@@ -144,11 +152,23 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosage " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U57-yq-gPl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i15-wb-M42">
                                         <rect key="frame" x="0.0" y="64" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosage " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U57-yq-gPl">
+                                                <rect key="frame" x="0.0" y="0.0" width="277" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="29F-Ki-fbu">
+                                                <rect key="frame" x="297" y="0.0" width="77" height="35"/>
+                                                <segments>
+                                                    <segment title="mg"/>
+                                                    <segment title="U"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount Of Pills" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFE-m6-7Es">
                                         <rect key="frame" x="0.0" y="128" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -178,6 +198,14 @@
                         <viewLayoutGuide key="safeArea" id="ywi-YO-8Dm"/>
                     </view>
                     <navigationItem key="navigationItem" id="4PO-qZ-eJZ"/>
+                    <connections>
+                        <outlet property="datePicker" destination="d3d-Xe-eKg" id="4kg-ir-lyR"/>
+                        <outlet property="dosageTextField" destination="U57-yq-gPl" id="Pg9-ag-3a7"/>
+                        <outlet property="nameTextField" destination="4tF-jP-y8b" id="Tv9-2Y-hR0"/>
+                        <outlet property="quantityTextField" destination="OFE-m6-7Es" id="vES-Hf-X1E"/>
+                        <outlet property="titleLabel" destination="wQo-U9-FMV" id="q7L-bC-O8f"/>
+                        <outlet property="unitSegmentedControl" destination="29F-Ki-fbu" id="yfU-tS-eEv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZj-l6-QjS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +214,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YlH-Tj-cCS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="djy-EZ-IsH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="djy-EZ-IsH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45F-41-rAO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -194,7 +222,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="R5i-4T-27T" kind="relationship" relationship="rootViewController" id="fyE-An-WEO"/>
+                        <segue destination="R5i-4T-27T" kind="relationship" relationship="rootViewController" id="oi9-fD-E1x"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJf-O7-1iX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,4 +233,7 @@
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jlm-4I-gmn"/>
+    </inferredMetricsTieBreakers>
 </document>
