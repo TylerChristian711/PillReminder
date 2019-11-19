@@ -10,6 +10,8 @@ import UIKit
 
 class PillsTableViewController: UITableViewController {
 
+    var medications: [Medication] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,18 +20,20 @@ class PillsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return medications.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MedicationInfoCell", for: indexPath) as? PillsTableViewCell else { return UITableViewCell() }
 
-        // Configure the cell...
+        let medication = medications[indexPath.row]
+        
+        
 
         return cell
     }
@@ -54,5 +58,11 @@ class PillsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddMeds" {
+            if let addMedsVc = segue.destination as? AddPillsViewController {
+                
+            }
+        }
     }
 }
