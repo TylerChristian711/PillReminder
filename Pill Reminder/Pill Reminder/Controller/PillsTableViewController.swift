@@ -8,73 +8,67 @@
 
 import UIKit
 
-class PillsTableViewController: UITableViewController,MedicationCellDelegate {
+class PillsTableViewController: UITableViewController {
     
-    
-    func didUpdateMedicationCount(for cell: PillsTableViewCell) {
-
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let medication = medicationController.medications[indexPath.row]
-        medicationController.updateMedicationCount(with: medication, count: Int(medication.quantity - 1))
-    }
-    
-
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Properties
     let medicationController = MedicationController()
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    // MARK: - Table view data source
-
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Table View DataSource/Delegate Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return medicationController.medications.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MedicationInfoCell", for: indexPath) as? PillsTableViewCell else { return UITableViewCell() }
-
-        let medication = medicationController.medications[indexPath.row]
         
+        let medication = medicationController.medications[indexPath.row]
+        cell.delegate = self
         cell.medication = medication
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        switch editingStyle {
+        case .delete:
+            print("Deleting medication")
+        default:
+            break
+        }
     }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "AddMeds" {
-            if let addMedsVc = segue.destination as? AddPillsViewController {
-                guard let indexPath = tableView.indexPathForSelectedRow else { return }
-                addMedsVc.medication = medicationController.medications[indexPath.row]
-                addMedsVc.medicationController = medicationController
-               
-            }
+        switch segue.identifier {
+        case "AddMeds":
+            guard let addMedsVC = segue.destination as? AddPillsViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            addMedsVC.medication = medicationController.medications[indexPath.row]
+            addMedsVC.medicationController = medicationController
+        default:
+            break
         }
+    }
+}
+
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// MARK: - MedicationCellDelegate Extension
+extension PillsTableViewController: MedicationCellDelegate {
+    func didUpdateMedicationCount(for cell: PillsTableViewCell) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let medication = medicationController.medications[indexPath.row]
+        medicationController.updateMedicationCount(with: medication, count: Int(medication.quantity - 1))
     }
 }
