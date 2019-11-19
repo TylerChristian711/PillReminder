@@ -8,9 +8,18 @@
 
 import UIKit
 
-class PillsTableViewController: UITableViewController {
+class PillsTableViewController: UITableViewController,MedicationCellDelegate {
+    
+    
+    func didUpdateMedicationCount(for cell: PillsTableViewCell) {
 
-    var medications: [Medication] = []
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let medication = medicationController.medications[indexPath.row]
+        medicationController.updateMedicationCount(with: medication, count: Int(medication.quantity - 1))
+    }
+    
+
+    let medicationController = MedicationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +34,15 @@ class PillsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return medications.count
+        return medicationController.medications.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MedicationInfoCell", for: indexPath) as? PillsTableViewCell else { return UITableViewCell() }
 
-        let medication = medications[indexPath.row]
+        let medication = medicationController.medications[indexPath.row]
         
-        
+        cell.medication = medication
 
         return cell
     }
@@ -61,7 +70,10 @@ class PillsTableViewController: UITableViewController {
         
         if segue.identifier == "AddMeds" {
             if let addMedsVc = segue.destination as? AddPillsViewController {
-                
+                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+                addMedsVc.medication = medicationController.medications[indexPath.row]
+                addMedsVc.medicationController = medicationController
+               
             }
         }
     }
