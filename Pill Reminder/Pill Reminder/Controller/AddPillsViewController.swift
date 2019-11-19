@@ -30,6 +30,8 @@ class AddPillsViewController: UIViewController {
         updateViews()
     }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - View Configuration
     private func updateViews() {
         if let medication = medication {
             titleLabel.text = "Edit Medication"
