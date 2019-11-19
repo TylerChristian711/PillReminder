@@ -26,13 +26,19 @@ class PillsTableViewCell: UITableViewCell {
         }
     }
     
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Cell Configuration
     private func updateViews() {
         guard let medication = medication else { return }
         nameLabel.text = medication.name
         dosageLabel.text = "\(medication.dosage)\(medication.units)"
-        timeLabel.text = "\(medication.time)"
+        timeLabel.text = dateFormatter.string(from: medication.time)
         quantityLabel.text = "Qty: \(medication.quantity)"
     }
     
