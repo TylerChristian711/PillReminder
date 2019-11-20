@@ -13,12 +13,16 @@ class PillsTableViewController: UITableViewController {
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
     let medicationController = MedicationController()
+    let defaults = UserDefaults.standard
     let center = UNUserNotificationCenter.current()
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if defaults.bool(forKey: UserDefaultsKeys.initialLaunch) == false {
+            defaults.set(true, forKey: UserDefaultsKeys.initialLaunch)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +61,7 @@ class PillsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MedicationInfoCell", for: indexPath) as? PillsTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.medicationInfoCell, for: indexPath) as? PillsTableViewCell else { return UITableViewCell() }
         
         let medication = medicationController.medications[indexPath.row]
         cell.delegate = self
@@ -79,10 +83,10 @@ class PillsTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "AddMeds":
+        case Segues.addMeds:
             guard let addMedsVC = segue.destination as? AddPillsViewController else { return }
             addMedsVC.medicationController = medicationController
-        case "EditMeds":
+        case Segues.editMeds:
             guard let addMedsVC = segue.destination as? AddPillsViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
             addMedsVC.medication = medicationController.medications[indexPath.row]
             addMedsVC.medicationController = medicationController
