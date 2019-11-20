@@ -10,10 +10,10 @@ import Foundation
 
 struct Medication: Equatable, Codable {
     let name: String
-    let dosage: Int
+    var dosage: Int
     let units: MedicationUnit
     var quantity: UInt32
-    let times: [Date]
+    var times: [Date]
     
     var lowDoseId: String {
         return "\(name)\(dosage)\(quantity)"

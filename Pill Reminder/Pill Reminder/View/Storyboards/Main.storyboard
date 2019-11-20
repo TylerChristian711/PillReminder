@@ -170,7 +170,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-1g-5rY">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-1g-5rY">
                                                 <rect key="frame" x="280" y="0.0" width="94" height="32"/>
                                                 <connections>
                                                     <action selector="stepperTapped:" destination="75v-cL-b11" eventType="valueChanged" id="H38-QU-WVH"/>
