@@ -15,6 +15,11 @@ class PillsTableViewController: UITableViewController {
     let medicationController = MedicationController()
     let defaults = UserDefaults.standard
     let center = UNUserNotificationCenter.current()
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - View Controller Life Cycle
@@ -26,26 +31,13 @@ class PillsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        notificationRequest { }
+        NotificationController.current.notificationRequest { }
+        NotificationController.current.setupTimeNotifications(medicationController: medicationController)
+        NotificationController.current.setupLowDosageNotifications(medicationController: medicationController)
         tableView.reloadData()
-    }
-    
-    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-    // MARK: - Helper Methods
-    private func notificationRequest(completion: @escaping () -> Void) {
-        center.getNotificationSettings { [weak self] settings in
-            guard let self = self else { return }
-            switch settings.authorizationStatus {
-            case .authorized:
-                break
-            case .notDetermined:
-                self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                    if granted {
-                        completion()
-                    }
-                }
-            default:
-                break
+        center.getPendingNotificationRequests { requests in
+            for request in requests {
+                print(request)
             }
         }
     }
@@ -73,7 +65,17 @@ class PillsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            print("Deleting medication")
+            let medication = medicationController.medications[indexPath.row]
+            medicationController.medications.remove(at: indexPath.row)
+            center.removePendingNotificationRequests(withIdentifiers: [medication.lowDoseId])
+            center.removePendingNotificationRequests(withIdentifiers: medication.timesId)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            center.getPendingNotificationRequests { requests in
+                for request in requests {
+                    print(request)
+                }
+            }
         default:
             break
         }

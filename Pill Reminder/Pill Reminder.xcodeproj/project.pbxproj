@@ -20,6 +20,7 @@
 		637BC22723846454009950FF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637BC22623846454009950FF /* Onboarding.storyboard */; };
 		637BC229238464B9009950FF /* ScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC228238464B9009950FF /* ScreenTwo.swift */; };
 		637BC22B238464D0009950FF /* ScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BC22A238464D0009950FF /* ScreenThree.swift */; };
+		63A123362385BA2700933FBE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A123352385BA2700933FBE /* NotificationController.swift */; };
 		63BE6455238473A3007D129F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE6454238473A3007D129F /* Main.storyboard */; };
 		E3BF6207238346B700BD9798 /* PillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF6206238346B700BD9798 /* PillsTableViewController.swift */; };
 		E3BF62092383472C00BD9798 /* PillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */; };
@@ -42,6 +43,7 @@
 		637BC22623846454009950FF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		637BC228238464B9009950FF /* ScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTwo.swift; sourceTree = "<group>"; };
 		637BC22A238464D0009950FF /* ScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenThree.swift; sourceTree = "<group>"; };
+		63A123352385BA2700933FBE /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		63BE6454238473A3007D129F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E3BF6206238346B700BD9798 /* PillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewController.swift; sourceTree = "<group>"; };
 		E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		63706CFE237F5521002A52B0 /* Pill Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				63A123342385BA1200933FBE /* Helpers */,
 				6341B67B23830D1D00D97661 /* Model */,
 				6341B67A23830D1800D97661 /* View */,
 				6341B67923830D1000D97661 /* Controller */,
@@ -162,6 +165,14 @@
 				637BC22A238464D0009950FF /* ScreenThree.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		63A123342385BA1200933FBE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				63A123352385BA2700933FBE /* NotificationController.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				6311E95123859510007899B5 /* Constants.swift in Sources */,
 				E3BF6207238346B700BD9798 /* PillsTableViewController.swift in Sources */,
 				637BC22B238464D0009950FF /* ScreenThree.swift in Sources */,
+				63A123362385BA2700933FBE /* NotificationController.swift in Sources */,
 				637BC229238464B9009950FF /* ScreenTwo.swift in Sources */,
 				637BC22323846357009950FF /* OnboardingPageViewController.swift in Sources */,
 				637BC22123845993009950FF /* MedicationCellDelegate.swift in Sources */,
