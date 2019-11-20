@@ -71,31 +71,31 @@ class AddPillsViewController: UIViewController {
             !name.isEmpty, !dosageString.isEmpty, !quantityString.isEmpty, let dosage = Int(dosageString), let quantity = Int(quantityString) else { return }
         var units: MedicationUnit = .mg
         
-        let components = Calendar.current.dateComponents([.hour], from: datePicker.date)
-        let hour = components.hour ?? 0
-        dateArray.append(datePicker.date)
-        
-        for number in 1 ..< Int(stepper.value) {
-            var changeHour = hour
-            changeHour = hour + (number * advanceTimeBy)
-            var newComponents = DateComponents()
-            newComponents.hour = changeHour
-            let newDate = Calendar.current.date(from: newComponents) ?? Date()
-            dateArray.append(newDate)
-        }
-        
-        switch unitSegmentedControl.selectedSegmentIndex {
-        case 0:
-            units = .mg
-        case 1:
-            units = .U
-        default:
-            break
-        }
-        
         if let medication = medication {
             medicationController.update(medication, with: UInt32(quantity))
         } else {
+            let components = Calendar.current.dateComponents([.hour], from: datePicker.date)
+            let hour = components.hour ?? 0
+            dateArray.append(datePicker.date)
+            
+            for number in 1 ..< Int(stepper.value) {
+                var changeHour = hour
+                changeHour = hour + (number * advanceTimeBy)
+                var newComponents = DateComponents()
+                newComponents.hour = changeHour
+                let newDate = Calendar.current.date(from: newComponents) ?? Date()
+                dateArray.append(newDate)
+            }
+            
+            switch unitSegmentedControl.selectedSegmentIndex {
+            case 0:
+                units = .mg
+            case 1:
+                units = .U
+            default:
+                break
+            }
+            
             medicationController.createMedication(with: name, dosage: dosage, units: units, times: dateArray)
         }
         navigationController?.popViewController(animated: true)

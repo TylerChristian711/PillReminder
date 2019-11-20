@@ -19,7 +19,6 @@ class PillsTableViewCell: UITableViewCell {
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
     weak var delegate: MedicationCellDelegate?
-    var timeString = ""
     
     var medication: Medication? {
         didSet {
@@ -36,6 +35,7 @@ class PillsTableViewCell: UITableViewCell {
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Cell Configuration
     private func updateViews() {
+        var timeString = ""
         guard let medication = medication else { return }
         nameLabel.text = medication.name
         dosageLabel.text = "\(medication.dosage)\(medication.units)"

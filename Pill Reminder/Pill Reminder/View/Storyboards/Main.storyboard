@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pills Table View Controller-->
+        <!--Pill Reminder-->
         <scene sceneID="5t0-gx-Y2q">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="R5i-4T-27T" customClass="PillsTableViewController" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicationInfoCell" rowHeight="219" id="6M7-sp-Ury" customClass="PillsTableViewCell" customModule="Pill_Reminder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="219"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicationInfoCell" rowHeight="131" id="6M7-sp-Ury" customClass="PillsTableViewCell" customModule="Pill_Reminder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6M7-sp-Ury" id="i6y-dA-mVH">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="219"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="gB3-PC-qpl">
@@ -63,7 +63,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-rc-4yw">
-                                            <rect key="frame" x="323" y="89.5" width="40" height="40"/>
+                                            <rect key="frame" x="323" y="45.5" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="ARq-q1-ctC"/>
                                                 <constraint firstAttribute="width" secondItem="kLQ-rc-4yw" secondAttribute="height" multiplier="1:1" id="yJp-nX-yxM"/>
@@ -90,7 +90,7 @@
                                     <outlet property="nameLabel" destination="nI4-eO-P9q" id="pKo-hX-qtB"/>
                                     <outlet property="quantityLabel" destination="k5O-Ta-zdx" id="SSM-I5-Tbi"/>
                                     <outlet property="timeLabel" destination="JYw-fa-OGV" id="pwj-yD-HJX"/>
-                                    <segue destination="75v-cL-b11" kind="show" id="Jlm-4I-gmn"/>
+                                    <segue destination="75v-cL-b11" kind="show" identifier="EditMeds" id="Jlm-4I-gmn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,7 +99,7 @@
                             <outlet property="delegate" destination="R5i-4T-27T" id="TEl-1n-I9H"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2HT-Zh-vUP">
+                    <navigationItem key="navigationItem" title="Pill Reminder" id="2HT-Zh-vUP">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6z-B2-Yq8">
                             <connections>
                                 <segue destination="75v-cL-b11" kind="show" identifier="AddMeds" id="jEP-Y3-OsS"/>
@@ -120,13 +120,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add/Edit Medication" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQo-U9-FMV">
-                                <rect key="frame" x="20" y="119" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="171" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hu6-z1-2g8">
-                                <rect key="frame" x="20" y="161" width="374" height="224"/>
+                                <rect key="frame" x="20" y="213" width="374" height="224"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-jP-y8b">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -181,7 +181,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="4hO-dU-EBD">
-                                <rect key="frame" x="20" y="416" width="374" height="324.5"/>
+                                <rect key="frame" x="20" y="468" width="374" height="324.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Your Time Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETk-Dr-WUD">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -243,8 +243,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="djy-EZ-IsH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45F-41-rAO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="45F-41-rAO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -261,6 +261,6 @@
         <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jlm-4I-gmn"/>
+        <segue reference="jEP-Y3-OsS"/>
     </inferredMetricsTieBreakers>
 </document>
