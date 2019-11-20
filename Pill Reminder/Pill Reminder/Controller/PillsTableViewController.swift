@@ -35,11 +35,6 @@ class PillsTableViewController: UITableViewController {
         NotificationController.current.setupTimeNotifications(medicationController: medicationController)
         NotificationController.current.setupLowDosageNotifications(medicationController: medicationController)
         tableView.reloadData()
-        center.getPendingNotificationRequests { requests in
-            for request in requests {
-                print(request)
-            }
-        }
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -66,16 +61,10 @@ class PillsTableViewController: UITableViewController {
         switch editingStyle {
         case .delete:
             let medication = medicationController.medications[indexPath.row]
-            medicationController.medications.remove(at: indexPath.row)
+            medicationController.deleteMedication(medication)
             center.removePendingNotificationRequests(withIdentifiers: [medication.lowDoseId])
             center.removePendingNotificationRequests(withIdentifiers: medication.timesId)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
-            center.getPendingNotificationRequests { requests in
-                for request in requests {
-                    print(request)
-                }
-            }
         default:
             break
         }
@@ -104,7 +93,7 @@ extension PillsTableViewController: MedicationCellDelegate {
     func didUpdateMedicationCount(for cell: PillsTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let medication = medicationController.medications[indexPath.row]
-        medicationController.update(medication, with: medication.quantity - 1)
+        medicationController.update(medication, with: medication.quantity - 1, dosage: medication.dosage, times: medication.times)
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

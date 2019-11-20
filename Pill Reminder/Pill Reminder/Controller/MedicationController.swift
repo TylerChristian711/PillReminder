@@ -38,8 +38,8 @@ class MedicationController {
     ///   - dosage: The strength of the medication
     ///   - units: The units for the medication
     ///   - schedule: When the medication should be taken
-    func createMedication(with name: String, dosage: Int, units: MedicationUnit, times: [Date]) {
-        let newMedication = Medication(name: name, dosage: dosage, units: units, quantity: 30, times: times)
+    func createMedication(with name: String, quantity: UInt32, dosage: Int, units: MedicationUnit, times: [Date]) {
+        let newMedication = Medication(name: name, dosage: dosage, units: units, quantity: quantity, times: times)
         medications.append(newMedication)
         saveToPersistentStore()
     }
@@ -48,9 +48,12 @@ class MedicationController {
     /// - Parameters:
     ///   - medication: The medication which will be changed
     ///   - count: The new count for the medication
-    func update(_ medication: Medication, with count: UInt32) {
+    func update(_ medication: Medication, with count: UInt32, dosage: Int, times: [Date]) {
         guard let index = medications.firstIndex(of: medication) else { return }
         medications[index].quantity = UInt32(count)
+        medications[index].dosage = dosage
+        medications[index].times = times
+        saveToPersistentStore()
     }
     
     /// Function to delete the passed in medication from the Array
@@ -58,6 +61,7 @@ class MedicationController {
     func deleteMedication(_ medication: Medication) {
         guard let index = medications.firstIndex(of: medication) else { return }
         medications.remove(at: index)
+        saveToPersistentStore()
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
