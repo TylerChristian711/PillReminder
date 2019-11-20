@@ -26,6 +26,7 @@ class AddPillsViewController: UIViewController {
     var medication: Medication?
     var advanceTimeBy: Int = 0
     var dateArray = [Date]()
+    let center = UNUserNotificationCenter.current()
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - View Controller Life Cycle
@@ -83,6 +84,7 @@ class AddPillsViewController: UIViewController {
                 changeHour = hour + (number * advanceTimeBy)
                 var newComponents = DateComponents()
                 newComponents.hour = changeHour
+                newComponents.minute = components.minute
                 let newDate = Calendar.current.date(from: newComponents) ?? Date()
                 dateArray.append(newDate)
             }

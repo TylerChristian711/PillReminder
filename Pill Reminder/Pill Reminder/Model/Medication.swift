@@ -14,14 +14,19 @@ struct Medication: Equatable, Codable {
     let units: MedicationUnit
     var quantity: UInt32
     let times: [Date]
+    
     var lowDoseId: String {
         return "\(name)\(dosage)\(quantity)"
     }
     
-    var timesId: String {
-        let components = DateComponents()
-        let hour = components.hour ?? 0
-        return "\(name)\(dosage)\(hour)"
+    var timesId: [String] {
+        var stringArray = [String]()
+        for time in times {
+            let components = Calendar.current.dateComponents([.hour], from: time)
+            let hour = components.hour ?? 0
+            stringArray.append("\(name)\(dosage)\(hour)")
+        }
+        return stringArray
     }
 }
 
