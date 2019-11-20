@@ -13,6 +13,7 @@ class PillsTableViewController: UITableViewController {
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
     let medicationController = MedicationController()
+    let center = UNUserNotificationCenter.current()
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - View Controller Life Cycle
@@ -21,7 +22,28 @@ class PillsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        notificationRequest { }
         tableView.reloadData()
+    }
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Helper Methods
+    private func notificationRequest(completion: @escaping () -> Void) {
+        center.getNotificationSettings { [weak self] settings in
+            guard let self = self else { return }
+            switch settings.authorizationStatus {
+            case .authorized:
+                break
+            case .notDetermined:
+                self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    if granted {
+                        completion()
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---

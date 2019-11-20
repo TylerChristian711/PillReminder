@@ -19,6 +19,7 @@ class PillsTableViewCell: UITableViewCell {
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
     weak var delegate: MedicationCellDelegate?
+    var timeString = ""
     
     var medication: Medication? {
         didSet {
@@ -38,7 +39,11 @@ class PillsTableViewCell: UITableViewCell {
         guard let medication = medication else { return }
         nameLabel.text = medication.name
         dosageLabel.text = "\(medication.dosage)\(medication.units)"
-        timeLabel.text = dateFormatter.string(from: medication.time)
+//        timeLabel.text = dateFormatter.string(from: medication.time)
+        for time in medication.times {
+            timeString += dateFormatter.string(from: time).replacingOccurrences(of: ":00", with: "") + "\t"
+        }
+        timeLabel.text = timeString
         quantityLabel.text = "Qty: \(medication.quantity)"
     }
     
