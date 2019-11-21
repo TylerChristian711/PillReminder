@@ -1,6 +1,6 @@
 //
 //  NotificationController.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Chad Rutherford on 11/20/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
@@ -55,6 +55,7 @@ class NotificationController {
     func setupLowDosageNotifications(medicationController: MedicationController) {
         var components = DateComponents()
         components.hour = 7
+        components.minute = 0
         for medication in medicationController.medications {
             if medication.quantity <= 10 {
                 let content = UNMutableNotificationContent()

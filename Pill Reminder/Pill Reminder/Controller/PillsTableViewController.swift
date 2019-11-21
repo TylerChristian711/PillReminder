@@ -1,10 +1,9 @@
 //
 //  PillsTableViewController.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Lambda_School_Loaner_218 on 11/18/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
-// comment for commit 
 
 import UIKit
 
@@ -35,6 +34,11 @@ class PillsTableViewController: UITableViewController {
         NotificationController.current.setupTimeNotifications(medicationController: medicationController)
         NotificationController.current.setupLowDosageNotifications(medicationController: medicationController)
         tableView.reloadData()
+        center.getPendingNotificationRequests { requests in
+            for request in requests {
+                print(request)
+            }
+        }
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---

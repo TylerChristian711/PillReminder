@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Chad Rutherford on 11/15/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
