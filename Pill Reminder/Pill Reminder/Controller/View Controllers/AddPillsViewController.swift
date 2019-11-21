@@ -32,7 +32,14 @@ class AddPillsViewController: UIViewController {
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.delegate = self
+        dosageTextField.delegate = self
+        quantityTextField.delegate = self
         updateViews()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -105,5 +112,11 @@ class AddPillsViewController: UIViewController {
             medicationController.createMedication(with: name, quantity: UInt32(quantity), dosage: dosage, units: units, times: dateArray)
         }
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension AddPillsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
