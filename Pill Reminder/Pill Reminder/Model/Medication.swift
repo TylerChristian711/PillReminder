@@ -1,6 +1,6 @@
 //
 //  Medication.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Chad Rutherford on 11/18/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
@@ -15,10 +15,14 @@ struct Medication: Equatable, Codable {
     var quantity: UInt32
     var times: [Date]
     
+    
+    /// Returns a unique ID for low dosage notifications
     var lowDoseId: String {
         return "\(name)\(dosage)\(quantity)"
     }
     
+    
+    /// Returns a unique ID for daily dosage notifications
     var timesId: [String] {
         var stringArray = [String]()
         for time in times {

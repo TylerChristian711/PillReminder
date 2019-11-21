@@ -1,6 +1,6 @@
 //
 //  NotificationController.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Chad Rutherford on 11/20/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
@@ -9,6 +9,9 @@
 import UIKit
 
 class NotificationController {
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Properties
     static let current = NotificationController()
     let center = UNUserNotificationCenter.current()
     var dateFormatter: DateFormatter = {
@@ -17,6 +20,8 @@ class NotificationController {
         return formatter
     }()
     
+    /// Function to prompt the user for permission to schedule and send notifications
+    /// - Parameter completion: completion handler for the authorization request
     func notificationRequest(completion: @escaping () -> Void) {
         center.getNotificationSettings { [weak self] settings in
             guard let self = self else { return }
@@ -35,6 +40,9 @@ class NotificationController {
         }
     }
     
+    
+    /// Function to set up timed notifications for every medication scheduled in the medications array
+    /// - Parameter medicationController: The medication controller to be passed in
     func setupTimeNotifications(medicationController: MedicationController) {
         for medication in medicationController.medications {
             for (index, time) in medication.times.enumerated() {
@@ -52,9 +60,12 @@ class NotificationController {
         }
     }
     
+    /// Function to set up a notification every morning at 7am when their quantity drops below 10
+    /// - Parameter medicationController: The medication controller to be passed in.
     func setupLowDosageNotifications(medicationController: MedicationController) {
         var components = DateComponents()
         components.hour = 7
+        components.minute = 0
         for medication in medicationController.medications {
             if medication.quantity <= 10 {
                 let content = UNMutableNotificationContent()

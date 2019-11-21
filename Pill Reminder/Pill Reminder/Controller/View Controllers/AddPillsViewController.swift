@@ -1,6 +1,6 @@
 //
 //  AddPillsViewController.swift
-//  Pill Reminder
+//  Daily Dose
 //
 //  Created by Lambda_School_Loaner_218 on 11/18/19.
 //  Copyright © 2019 Chad & Tyler. All rights reserved.
@@ -100,7 +100,6 @@ class AddPillsViewController: UIViewController {
         }
         
         if let medication = medication {
-//            medicationController.update(medication, with: UInt32(quantity))
             medicationController.update(medication, with: UInt32(quantity), dosage: dosage, times: dateArray)
         } else {
             medicationController.createMedication(with: name, quantity: UInt32(quantity), dosage: dosage, units: units, times: dateArray)

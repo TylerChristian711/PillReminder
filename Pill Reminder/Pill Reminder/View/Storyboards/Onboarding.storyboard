@@ -10,7 +10,7 @@
         <!--Onboarding Page View Controller-->
         <scene sceneID="o0j-SJ-qSu">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="acZ-B6-OnB" customClass="OnboardingPageViewController" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="acZ-B6-OnB" customClass="OnboardingPageViewController" customModule="Daily_Dose" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nag-GC-iBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="-299"/>
@@ -18,13 +18,13 @@
         <!--Screen One-->
         <scene sceneID="rTZ-1q-fxS">
             <objects>
-                <viewController storyboardIdentifier="ScreenOne" id="IbG-pj-iwP" customClass="ScreenOne" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenOne" id="IbG-pj-iwP" customClass="ScreenOne" customModule="Daily_Dose" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZP-9g-e3P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehg-km-30e">
-                                <rect key="frame" x="112.5" y="84" width="189.5" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehg-km-30e">
+                                <rect key="frame" x="129" y="84" width="156" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,19 +72,19 @@
         <!--Screen Two-->
         <scene sceneID="NIZ-qn-XjK">
             <objects>
-                <viewController storyboardIdentifier="ScreenTwo" id="iLB-f7-pql" customClass="ScreenTwo" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenTwo" id="iLB-f7-pql" customClass="ScreenTwo" customModule="Daily_Dose" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z7d-Jq-NgE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder will show you  a list of your daily medications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtI-ua-1iP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dose will show you  a list of your daily medications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtI-ua-1iP">
                                 <rect key="frame" x="86.5" y="110" width="241.5" height="42.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-mW-PIq">
-                                <rect key="frame" x="87" y="160" width="240" height="176"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cellScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-mW-PIq">
+                                <rect key="frame" x="87" y="160" width="240" height="176.00000000000006"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-q2-sXD">
                                 <rect key="frame" x="138.5" y="549" width="137" height="21"/>
@@ -126,12 +126,12 @@
         <!--Screen Three-->
         <scene sceneID="yw7-1g-lha">
             <objects>
-                <viewController storyboardIdentifier="ScreenThree" id="d5m-KC-uHp" customClass="ScreenThree" customModule="Pill_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenThree" id="d5m-KC-uHp" customClass="ScreenThree" customModule="Daily_Dose" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J8h-aU-8fi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pill Reminder also gives you a  detailed view to either add" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-Wf-YvT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dose also gives you a  detailed view to either add" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-Wf-YvT">
                                 <rect key="frame" x="85" y="134" width="245" height="42.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42.5" id="Thu-PO-6gt"/>
@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addScreen" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-V4-odb">
-                                <rect key="frame" x="85" y="196" width="245" height="211"/>
+                                <rect key="frame" x="85" y="196" width="245.00000000000023" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="211" id="YNz-KP-KC2"/>
                                 </constraints>
@@ -206,9 +206,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addScreen" width="832" height="1150"/>
+        <image name="addScreen" width="1006" height="1676"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
-        <image name="cellScreen" width="828" height="176"/>
-        <image name="editScreen" width="828" height="1154"/>
+        <image name="cellScreen" width="820" height="206"/>
+        <image name="editScreen" width="1000" height="1628"/>
     </resources>
 </document>
