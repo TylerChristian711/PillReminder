@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class RoundedCellView: UIView {
     
+    /// Creates a custom view for the table view cell
     override func layoutSubviews() {
         clipsToBounds = true
         layer.cornerRadius = 15

@@ -79,6 +79,31 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		6316CAB8238713F600B3D0C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6316CAB92387140100B3D0C4 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6341B680238311DA00D97661 /* MedicationController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		6316CABA2387141100B3D0C4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3BF6206238346B700BD9798 /* PillsTableViewController.swift */,
+				E3BF620A2383475000BD9798 /* AddPillsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		6341B67723830CCC00D97661 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,11 +129,9 @@
 		6341B67923830D1000D97661 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6316CAB92387140100B3D0C4 /* Model Controllers */,
 				637BC22C238464E0009950FF /* Onboarding */,
-				E3BF62082383472C00BD9798 /* PillsTableViewCell.swift */,
-				E3BF6206238346B700BD9798 /* PillsTableViewController.swift */,
-				E3BF620A2383475000BD9798 /* AddPillsViewController.swift */,
-				6341B680238311DA00D97661 /* MedicationController.swift */,
+				6316CABA2387141100B3D0C4 /* View Controllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,6 +139,7 @@
 		6341B67A23830D1800D97661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6316CAB8238713F600B3D0C4 /* Cells */,
 				6316CAB523870E3000B3D0C4 /* Custom Views */,
 				6341B67823830D0200D97661 /* Storyboards */,
 			);
@@ -149,11 +173,11 @@
 		63706CFE237F5521002A52B0 /* Pill Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				63A123342385BA1200933FBE /* Helpers */,
 				6341B67B23830D1D00D97661 /* Model */,
 				6341B67A23830D1800D97661 /* View */,
 				6341B67923830D1000D97661 /* Controller */,
 				637BC21F23845973009950FF /* Protocols */,
+				63A123342385BA1200933FBE /* Helpers */,
 				6341B67723830CCC00D97661 /* Supporting Files */,
 			);
 			path = "Pill Reminder";

@@ -83,8 +83,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-mW-PIq">
-                                <rect key="frame" x="87" y="160" width="240" height="176"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cellScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-mW-PIq">
+                                <rect key="frame" x="87" y="160" width="240" height="176.00000000000006"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-q2-sXD">
                                 <rect key="frame" x="138.5" y="549" width="137" height="21"/>
@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addScreen" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-V4-odb">
-                                <rect key="frame" x="85" y="196" width="245" height="211"/>
+                                <rect key="frame" x="85" y="196" width="245.00000000000023" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="211" id="YNz-KP-KC2"/>
                                 </constraints>
@@ -206,9 +206,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addScreen" width="832" height="1150"/>
+        <image name="addScreen" width="1006" height="1676"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
-        <image name="cellScreen" width="828" height="176"/>
-        <image name="editScreen" width="828" height="1154"/>
+        <image name="cellScreen" width="820" height="206"/>
+        <image name="editScreen" width="1000" height="1628"/>
     </resources>
 </document>

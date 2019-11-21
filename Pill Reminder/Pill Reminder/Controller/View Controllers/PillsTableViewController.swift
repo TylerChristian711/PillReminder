@@ -34,11 +34,13 @@ class PillsTableViewController: UITableViewController {
         NotificationController.current.setupTimeNotifications(medicationController: medicationController)
         NotificationController.current.setupLowDosageNotifications(medicationController: medicationController)
         tableView.reloadData()
-        center.getPendingNotificationRequests { requests in
-            for request in requests {
-                print(request)
-            }
-        }
+        
+        // MARK: - print out scheduled notifications at scene load
+        //        center.getPendingNotificationRequests { requests in
+        //            for request in requests {
+        //                print(request)
+        //            }
+        //        }
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -46,7 +48,7 @@ class PillsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1 
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicationController.medications.count
     }
@@ -57,7 +59,7 @@ class PillsTableViewController: UITableViewController {
         let medication = medicationController.medications[indexPath.row]
         cell.delegate = self
         cell.medication = medication
-
+        
         return cell
     }
     
@@ -69,6 +71,13 @@ class PillsTableViewController: UITableViewController {
             center.removePendingNotificationRequests(withIdentifiers: [medication.lowDoseId])
             center.removePendingNotificationRequests(withIdentifiers: medication.timesId)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            // MARK: - print out scheduled notifications after delete
+            //        center.getPendingNotificationRequests { requests in
+            //            for request in requests {
+            //                print(request)
+            //            }
+            //        }
         default:
             break
         }
