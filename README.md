@@ -10,3 +10,5 @@ Application for Lambda School's iOS Build Sprint 1
 # Screenshots
 
 ![alt text](https://raw.githubusercontent.com/chadarutherford/PillReminder/master/Screenshots/pillsScreen.png)
+![alt text](https://raw.githubusercontent.com/chadarutherford/PillReminder/master/Screenshots/addScreen.png)
+![alt text](https://raw.githubusercontent.com/chadarutherford/PillReminder/master/Screenshots/editScreen.png)
